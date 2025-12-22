@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "XR8ezHSyTjE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gunba\\Desktop\\labscs\\lab1\\Lab1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gunba\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\gunba\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
+    "C:\\Users\\gunba\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\gunba\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\gunba\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\gunba\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "У пакета \"System.Text.Json\" 8.0.4 есть известная уязвимость https://github.com/advisories/GHSA-8g4q-xg66-9fp4 (уровень серьезности: высокий уровень)",
+      "projectPath": "C:\\Users\\gunba\\Desktop\\labscs\\lab1\\Lab1.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\gunba\\Desktop\\labscs\\lab1\\Lab1.csproj",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
