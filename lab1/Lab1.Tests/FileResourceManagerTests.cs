@@ -4,9 +4,7 @@ using System.Text;
 
 namespace Lab1.Tests;
 
-/// <summary>
-/// Тесты для класса FileResourceManager
-/// </summary>
+
 public class FileResourceManagerTests : IDisposable
 {
     private readonly string _testDirectory;

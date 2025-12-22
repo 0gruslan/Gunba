@@ -3,9 +3,7 @@ using Lab1;
 
 namespace Lab1.Tests;
 
-/// <summary>
-/// Тесты для класса PersonSerializer
-/// </summary>
+
 public class PersonSerializerTests : IDisposable
 {
     private readonly PersonSerializer _serializer;

@@ -3,9 +3,7 @@ using Lab1;
 
 namespace Lab1.Tests;
 
-/// <summary>
-/// Тесты для класса Person
-/// </summary>
+
 public class PersonTests
 {
     [Fact]
