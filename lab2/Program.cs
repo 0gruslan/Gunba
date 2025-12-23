@@ -10,7 +10,7 @@ class Program
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("=== Лабораторная работа 2: Измерение производительности коллекций ===\n");
+        Console.WriteLine("Лабораторная работа 2: Измерение производительности коллекций");
 
         var measurers = new List<CollectionPerformanceMeasurer>
         {
@@ -23,7 +23,7 @@ class Program
 
         var results = new List<PerformanceResults>();
 
-        Console.WriteLine("Начало измерений...\n");
+        Console.WriteLine("Начало измерений...");
 
         foreach (var measurer in measurers)
         {
@@ -35,11 +35,11 @@ class Program
             Console.WriteLine($"Завершено за {sw.ElapsedMilliseconds} мс\n");
         }
 
-        Console.WriteLine("\n=== РЕЗУЛЬТАТЫ ИЗМЕРЕНИЙ ===\n");
+        Console.WriteLine("РЕЗУЛЬТАТЫ ИЗМЕРЕНИЙ");
         PrintResults(results);
         SaveResultsToFile(results);
 
-        Console.WriteLine("\n=== АНАЛИЗ ПРОИЗВОДИТЕЛЬНОСТИ ===\n");
+        Console.WriteLine("АНАЛИЗ ПРОИЗВОДИТЕЛЬНОСТИ");
         AnalyzeResults(results);
     }
 
@@ -126,7 +126,7 @@ class Program
     {
         var lines = new List<string>
         {
-            "=== РЕЗУЛЬТАТЫ ИЗМЕРЕНИЙ ПРОИЗВОДИТЕЛЬНОСТИ ===",
+            "РЕЗУЛЬТАТЫ ИЗМЕРЕНИЙ ПРОИЗВОДИТЕЛЬНОСТИ",
             $"Дата: {DateTime.Now:yyyy-MM-dd HH:mm:ss}",
             $"Размер коллекции: {CollectionPerformanceMeasurer.CollectionSize:N0} элементов",
             $"Количество итераций: {CollectionPerformanceMeasurer.MeasurementIterations}",
