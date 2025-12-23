@@ -5,18 +5,29 @@ namespace Lab1;
 
 public class Person
 {
-    [JsonPropertyName("firstName")]
     public string FirstName { get; set; } = string.Empty;
 
-    [JsonPropertyName("lastName")]
     public string LastName { get; set; } = string.Empty;
 
-    [JsonPropertyName("age")]
     public int Age { get; set; }
+
+    [JsonIgnore]
+    public string Password { get; set; } = string.Empty;
+
+    [JsonPropertyName("personId")]
+    public string Id { get; set; } = string.Empty;
+
+    [JsonInclude]
+    private DateTime _birthDate;
+
+    public DateTime BirthDate
+    {
+        get => _birthDate;
+        set => _birthDate = value;
+    }
 
     private string _email = string.Empty;
 
-    [JsonPropertyName("email")]
     public string Email
     {
         get => _email;
@@ -30,8 +41,8 @@ public class Person
         }
     }
 
-    [JsonIgnore]
-    public string Password { get; set; } = string.Empty;
+    [JsonPropertyName("phone")]
+    public string PhoneNumber { get; set; } = string.Empty;
 
     
     [JsonIgnore]

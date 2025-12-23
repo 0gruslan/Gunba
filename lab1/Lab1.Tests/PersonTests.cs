@@ -13,14 +13,14 @@ public class PersonTests
         var person = new Person
         {
             FirstName = "Иван",
-            LastName = "Иванов"
+            LastName = "Филиппов"
         };
 
         // Act
         var fullName = person.FullName;
 
         // Assert
-        Assert.Equal("Иван Иванов", fullName);
+        Assert.Equal("Иван Филиппов", fullName);
     }
 
     [Fact]
@@ -62,8 +62,8 @@ public class PersonTests
         var person = new Person();
 
         // Act & Assert
-        person.Email = "test@example.com";
-        Assert.Equal("test@example.com", person.Email);
+        person.Email = "test@testov.com";
+        Assert.Equal("test@testov.com", person.Email);
     }
 
     [Fact]

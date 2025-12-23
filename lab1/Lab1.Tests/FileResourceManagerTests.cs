@@ -141,7 +141,7 @@ public class FileResourceManagerTests : IDisposable
             manager.WriteLine("Test");
         }
 
-        // Assert - файл должен быть создан и ресурсы освобождены
+        // Assert
         Assert.True(File.Exists(filePath));
         // Попытка использовать после using должна вызвать исключение
         var manager2 = new FileResourceManager(filePath);

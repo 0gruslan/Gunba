@@ -24,10 +24,10 @@ public class PersonSerializerTests : IDisposable
         var person = new Person
         {
             FirstName = "Иван",
-            LastName = "Иванов",
-            Age = 25,
-            Email = "ivan@example.com",
-            Password = "secret123"
+            LastName = "Филиппов",
+            Age = 19,
+            Email = "ivan@filipov.com",
+            Password = "elizavetaalexandrovnasamayaluchshaya"
         };
 
         // Act
@@ -36,10 +36,10 @@ public class PersonSerializerTests : IDisposable
         // Assert
         Assert.NotNull(json);
         Assert.Contains("Иван", json);
-        Assert.Contains("Иванов", json);
-        Assert.Contains("25", json);
-        Assert.Contains("ivan@example.com", json);
-        Assert.DoesNotContain("secret123", json); 
+        Assert.Contains("Филиппов", json);
+        Assert.Contains("19", json);
+        Assert.Contains("ivan@filipov.com", json);
+        Assert.DoesNotContain("elizavetaalexandrovnasamayaluchshaya", json); 
     }
 
     [Fact]
@@ -55,9 +55,9 @@ public class PersonSerializerTests : IDisposable
         // Arrange
         var json = @"{
   ""firstName"": ""Мария"",
-  ""lastName"": ""Петрова"",
-  ""age"": 30,
-  ""email"": ""maria@example.com""
+  ""lastName"": ""Максикова"",
+  ""age"": 19,
+  ""email"": ""maria@maksik.com""
 }";
 
         // Act
@@ -66,9 +66,9 @@ public class PersonSerializerTests : IDisposable
         // Assert
         Assert.NotNull(person);
         Assert.Equal("Мария", person.FirstName);
-        Assert.Equal("Петрова", person.LastName);
-        Assert.Equal(30, person.Age);
-        Assert.Equal("maria@example.com", person.Email);
+        Assert.Equal("Максикова", person.LastName);
+        Assert.Equal(19, person.Age);
+        Assert.Equal("maria@maksik.com", person.Email);
         Assert.Equal("Мария Петрова", person.FullName);
         Assert.True(person.IsAdult);
     }
@@ -87,9 +87,9 @@ public class PersonSerializerTests : IDisposable
         var person = new Person
         {
             FirstName = "Алексей",
-            LastName = "Сидоров",
-            Age = 28,
-            Email = "alex@example.com"
+            LastName = "Потапов",
+            Age = 20,
+            Email = "alex@potapov.com"
         };
         var filePath = GetTestFilePath("person.json");
 
@@ -100,7 +100,7 @@ public class PersonSerializerTests : IDisposable
         Assert.True(File.Exists(filePath));
         var content = File.ReadAllText(filePath);
         Assert.Contains("Алексей", content);
-        Assert.Contains("Сидоров", content);
+        Assert.Contains("Потапов", content);
     }
 
     [Fact]
@@ -112,7 +112,7 @@ public class PersonSerializerTests : IDisposable
             FirstName = "Елена",
             LastName = "Козлова",
             Age = 22,
-            Email = "elena@example.com"
+            Email = "elena@kozlova.com"
         };
         var filePath = GetTestFilePath("person.json");
         _serializer.SaveToFile(person, filePath);
@@ -125,7 +125,7 @@ public class PersonSerializerTests : IDisposable
         Assert.Equal("Елена", loadedPerson.FirstName);
         Assert.Equal("Козлова", loadedPerson.LastName);
         Assert.Equal(22, loadedPerson.Age);
-        Assert.Equal("elena@example.com", loadedPerson.Email);
+        Assert.Equal("elena@kozlova.com", loadedPerson.Email);
     }
 
     [Fact]
@@ -147,7 +147,7 @@ public class PersonSerializerTests : IDisposable
             FirstName = "Дмитрий",
             LastName = "Смирнов",
             Age = 35,
-            Email = "dmitry@example.com"
+            Email = "dmitry@smirnov.com"
         };
         var filePath = GetTestFilePath("person_async.json");
 
@@ -169,7 +169,7 @@ public class PersonSerializerTests : IDisposable
             FirstName = "Ольга",
             LastName = "Новикова",
             Age = 27,
-            Email = "olga@example.com"
+            Email = "olga@novikova.com"
         };
         var filePath = GetTestFilePath("person_async.json");
         await _serializer.SaveToFileAsync(person, filePath);
@@ -269,7 +269,7 @@ public class PersonSerializerTests : IDisposable
             FirstName = "Тест",
             LastName = "Тестов",
             Age = 25,
-            Email = "test@example.com"
+            Email = "test@testov.com"
         };
 
         // Act
@@ -289,7 +289,7 @@ public class PersonSerializerTests : IDisposable
             FirstName = "Тест",
             LastName = "Тестов",
             Age = 25,
-            Email = "test@example.com"
+            Email = "test@testov.com"
         };
 
         // Act
