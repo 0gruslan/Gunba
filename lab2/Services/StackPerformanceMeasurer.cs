@@ -1,4 +1,6 @@
-namespace Lab2;
+using Lab2.Models;
+
+namespace Lab2.Services;
 
 public class StackPerformanceMeasurer : CollectionPerformanceMeasurer
 {
@@ -11,7 +13,7 @@ public class StackPerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void InitializeCollection(int size)
     {
-        _stack = new Stack<int>(size); 
+        _stack = new Stack<int>(size);
         for (int i = 0; i < size; i++)
         {
             _stack.Push(i);
@@ -25,7 +27,6 @@ public class StackPerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void AddToBeginning(int item)
     {
-        
         var temp = new Stack<int>();
         temp.Push(item);
         var list = _stack!.ToList();

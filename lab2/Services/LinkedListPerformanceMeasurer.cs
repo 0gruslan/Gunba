@@ -1,4 +1,6 @@
-namespace Lab2;
+using Lab2.Models;
+
+namespace Lab2.Services;
 
 public class LinkedListPerformanceMeasurer : CollectionPerformanceMeasurer
 {

@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using System.Globalization;
+using Lab2.Models;
+using Lab2.Services;
 
 namespace Lab2;
 
@@ -35,8 +37,6 @@ class Program
 
         Console.WriteLine("\n=== РЕЗУЛЬТАТЫ ИЗМЕРЕНИЙ ===\n");
         PrintResults(results);
-
-        
         SaveResultsToFile(results);
 
         Console.WriteLine("\n=== АНАЛИЗ ПРОИЗВОДИТЕЛЬНОСТИ ===\n");
@@ -45,9 +45,7 @@ class Program
 
     static void PrintResults(List<PerformanceResults> results)
     {
-        
         Console.WriteLine("Время выполнения операций (в тиках, среднее за 5 итераций):\n");
-        
         Console.WriteLine($"{"Коллекция",-20} {"Доб. конец",-15} {"Доб. начало",-15} {"Доб. середина",-15} " +
                          $"{"Уд. начало",-15} {"Уд. конец",-15} {"Уд. середина",-15} {"Поиск",-15} {"Индекс",-15}");
         Console.WriteLine(new string('-', 140));

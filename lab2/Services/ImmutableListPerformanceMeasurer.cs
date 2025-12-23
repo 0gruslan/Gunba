@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
+using Lab2.Models;
 
-namespace Lab2;
+namespace Lab2.Services;
 
 public class ImmutableListPerformanceMeasurer : CollectionPerformanceMeasurer
 {

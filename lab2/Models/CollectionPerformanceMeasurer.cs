@@ -1,7 +1,6 @@
-using System.Collections.Immutable;
 using System.Diagnostics;
 
-namespace Lab2;
+namespace Lab2.Models;
 
 public abstract class CollectionPerformanceMeasurer
 {
@@ -12,22 +11,15 @@ public abstract class CollectionPerformanceMeasurer
     public string CollectionName { get; protected set; } = string.Empty;
 
     protected abstract void InitializeCollection(int size);
-
     protected abstract void AddToEnd(int item);
-
     protected abstract void AddToBeginning(int item);
-
     protected abstract void AddToMiddle(int item);
-
     protected abstract void RemoveFromBeginning();
-
     protected abstract void RemoveFromEnd();
-
     protected abstract void RemoveFromMiddle();
-
     protected abstract bool FindByValue(int value);
-
     protected abstract int? GetByIndex(int index);
+    protected abstract bool SupportsIndexAccess();
 
     protected double MeasureOperation(Action operation, int iterations = MeasurementIterations)
     {
@@ -53,7 +45,6 @@ public abstract class CollectionPerformanceMeasurer
         var results = new PerformanceResults { CollectionName = CollectionName };
 
         InitializeCollection(CollectionSize);
-
         results.AddToEndTime = MeasureOperation(() => AddToEnd(999999));
 
         InitializeCollection(CollectionSize);
@@ -82,22 +73,5 @@ public abstract class CollectionPerformanceMeasurer
 
         return results;
     }
-
-    
-    protected abstract bool SupportsIndexAccess();
-}
-
-
-public class PerformanceResults
-{
-    public string CollectionName { get; set; } = string.Empty;
-    public double AddToEndTime { get; set; }
-    public double AddToBeginningTime { get; set; }
-    public double AddToMiddleTime { get; set; }
-    public double RemoveFromBeginningTime { get; set; }
-    public double RemoveFromEndTime { get; set; }
-    public double RemoveFromMiddleTime { get; set; }
-    public double FindByValueTime { get; set; }
-    public double? GetByIndexTime { get; set; }
 }
 

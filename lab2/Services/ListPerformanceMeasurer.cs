@@ -1,5 +1,6 @@
-namespace Lab2;
+using Lab2.Models;
 
+namespace Lab2.Services;
 
 public class ListPerformanceMeasurer : CollectionPerformanceMeasurer
 {
@@ -12,7 +13,7 @@ public class ListPerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void InitializeCollection(int size)
     {
-        _list = new List<int>(size); 
+        _list = new List<int>(size);
         for (int i = 0; i < size; i++)
         {
             _list.Add(i);

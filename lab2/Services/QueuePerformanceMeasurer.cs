@@ -1,4 +1,6 @@
-namespace Lab2;
+using Lab2.Models;
+
+namespace Lab2.Services;
 
 public class QueuePerformanceMeasurer : CollectionPerformanceMeasurer
 {
@@ -11,7 +13,7 @@ public class QueuePerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void InitializeCollection(int size)
     {
-        _queue = new Queue<int>(size); 
+        _queue = new Queue<int>(size);
         for (int i = 0; i < size; i++)
         {
             _queue.Enqueue(i);
@@ -25,7 +27,6 @@ public class QueuePerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void AddToBeginning(int item)
     {
-        
         var temp = new Queue<int>();
         temp.Enqueue(item);
         while (_queue!.Count > 0)
@@ -37,7 +38,6 @@ public class QueuePerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void AddToMiddle(int item)
     {
-        
         var temp = new Queue<int>();
         int middle = _queue!.Count / 2;
         for (int i = 0; i < middle; i++)
@@ -59,7 +59,6 @@ public class QueuePerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void RemoveFromEnd()
     {
-        
         var temp = new Queue<int>();
         int count = _queue!.Count;
         for (int i = 0; i < count - 1; i++)
@@ -71,14 +70,13 @@ public class QueuePerformanceMeasurer : CollectionPerformanceMeasurer
 
     protected override void RemoveFromMiddle()
     {
-        
         var temp = new Queue<int>();
         int middle = _queue!.Count / 2;
         for (int i = 0; i < middle; i++)
         {
             temp.Enqueue(_queue.Dequeue());
         }
-        _queue.Dequeue(); 
+        _queue.Dequeue();
         while (_queue.Count > 0)
         {
             temp.Enqueue(_queue.Dequeue());
