@@ -39,7 +39,7 @@ public class PersonSerializerTests : IDisposable
         Assert.Contains("Иванов", json);
         Assert.Contains("25", json);
         Assert.Contains("ivan@example.com", json);
-        Assert.DoesNotContain("secret123", json); // Password должен быть проигнорирован
+        Assert.DoesNotContain("secret123", json); 
     }
 
     [Fact]
